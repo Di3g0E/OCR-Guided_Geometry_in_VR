@@ -1,4 +1,4 @@
-# OCR-Guided Geometry
+# OCR-Guided Geometry in VR
 
 Este proyecto tiene como objetivo entrenar y evaluar diferentes algoritmos de OCR (Reconocimiento Óptico de Caracteres) para identificar texto en imágenes. A partir del texto leído, se calcula la homografía necesaria para proyectar una figura geométrica sobre la imagen, correspondiente al nombre identificado.
 
@@ -18,49 +18,23 @@ Este trabajo se desarrolla como parte de la asignatura de **Visión Artificial**
 
 A continuación se muestra un ejemplo del funcionamiento del sistema, incluyendo la detección del texto, cálculo de homografía y dibujo de la figura correspondiente:
 
-![demo](./images/demo_result.png)
-
----
-
-## 🧰 Tecnologías Utilizadas
-
-- **Python 3.9+**
-- `OpenCV`
-- `Tesseract OCR`
-- `matplotlib`
-- `numpy`
-- `Pillow`
-
----
-
-## ⚙️ Instalación
-1. Clona el repositorio:
-git clone https://github.com/tuusuario/OCR-Guided-Geometry.git
-cd OCR-Guided-Geometry
-
-2. (Opcional) Crea un entorno virtual:
-python -m venv venv
-source venv/bin/activate  # En Linux/macOS
-venv\Scripts\activate     # En Windows
-
-3. Instala las dependencias:
-pip install -r requirements.txt
-Asegúrate de tener instalado Tesseract-OCR en tu sistema. Puedes encontrarlo en: https://github.com/tesseract-ocr/tesseract
-
+<p align="center">
+<img src="https://github.com/user-attachments/assets/6d2ae9c9-c5a7-484c-bfe8-0b79099a7b60" width="400" />
+</p>
 
 ---
 
 
 ## 🚀 Uso
 - Abre y ejecuta el notebook:
-jupyter notebook pruebas.ipynb
+```jupyter notebook pruebas.ipynb```
 
 - Dentro del notebook:
-Se cargan imágenes de entrada.
-Se aplica el OCR al texto presente en las imágenes.
-Se determina qué figura debe dibujarse según el texto leído.
-Se calcula la homografía para adaptar la figura a la perspectiva de la imagen.
-La figura geométrica es dibujada directamente sobre la imagen.
+  - Se cargan imágenes de entrada.
+  - Se aplica el OCR al texto presente en las imágenes.
+  - Se determina qué figura debe dibujarse según el texto leído.
+  - Se calcula la homografía para adaptar la figura a la perspectiva de la imagen.
+  - La figura geométrica es dibujada directamente sobre la imagen.
 
 
 ---
@@ -68,10 +42,14 @@ La figura geométrica es dibujada directamente sobre la imagen.
 
 ## 🧪 Ejemplo de Uso
 
-- OCR detecta el texto "TRIÁNGULO" en la imagen
-- Se proyecta un triángulo sobre la superficie reconocida en perspectiva
+- Calcula el eje de la plantilla en la imagen
+- Destaca los límites de la plantilla de color rojo
+- Recorta la zona de la imagen donde se encuentra el texto
+- OCR detecta el texto "Cubo" en la imagen
+- Usando la distancia de Levenshtein minimizamos errores en las predicciones de las figuras
+- Se proyecta un cubo sobre la superficie reconocida en perspectiva
 
-- Resultado: se guarda o muestra la imagen con la figura dibujada
+- Resultado: se guarda y/o muestra la imagen con la figura dibujada
 
 ---
 
